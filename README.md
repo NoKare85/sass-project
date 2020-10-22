@@ -1,2 +1,2 @@
-# portfolio-project
-School project
+# scss-project
+My own project
