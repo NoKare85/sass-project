@@ -31,28 +31,3 @@ function toggleMenu() {
         showMenu = false;
     }
 }
-
-var menuHover = document.getElementById("menu2");
-
-menuHover.addEventListener("click", setActive);
-
-function setActive() {
-    if (!menuHover.classList.contains("active")) {
-        console.log("something");
-        menuHover.classList.add("active");
-        window.onmousemove = function (e) {
-            var x = e.clientX,
-                y = e.clientY;
-            menuHover.style.top = y - 50 + "px";
-            menuHover.style.left = x - 50 + "px";
-        };
-    } else {
-        console.log("something else");
-        var rect = menuHover.getBoundingClientRect;
-        console.log(menuHover, rect.top);
-        menuHover.style.top = "20vh";
-        menuHover.style.left = "20vh";
-        menuHover.classList.remove("active");
-        window.onmousemove = null;
-    }
-}
