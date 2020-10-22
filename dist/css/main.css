@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 3;
   right: 35px;
-  top: 35px;
+  top: 7.5vh;
   cursor: pointer;
   transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
@@ -28,56 +28,44 @@
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
-  .menu-branding, .menu-nav {
+  .menu-nav {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
     float: left;
-    width: 50%;
-    height: 100vh;
+    width: 100%;
+    height: 20vh;
     overflow: hidden; }
   .menu-nav {
     margin: 0;
-    padding: 0;
-    background: #373737;
+    padding: 5vw;
+    background: #281d18;
     list-style: none;
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(100%, 0, 0);
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
-  .menu-branding {
-    background: #444;
-    transform: translate3d(0, 100%, 0);
-    transition: all 0.5s ease-out; }
-    .menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-    .menu-branding .portrait {
-      width: 200px;
-      height: 200px;
-      background: url("../img/portrait.jpg");
-      background-position: center;
-      border-radius: 50%;
-      border: solid 3px #eece1a; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #eece1a; }
+      color: #ffd57e; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 30px;
+    font-size: large;
     text-transform: uppercase;
-    padding: 1rem 0;
+    margin: 0;
+    padding: 5vw;
     font-weight: 300;
     color: #fff;
     text-decoration: none;
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
-      color: #eece1a; }
+      color: #ffd57e; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -95,14 +83,14 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #444;
+  background-color: #382922;
   color: #fff;
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../img/background.jpg);
+    background: url(../img/background3.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
@@ -112,7 +100,7 @@ body {
       right: 0;
       width: 100%;
       height: 100%;
-      background: rgba(68, 68, 68, 0.9);
+      background: rgba(56, 41, 34, 0.8);
       z-index: -1; }
 
 h1,
@@ -129,7 +117,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: #494949; }
+    background: #3e2e26; }
 
 a {
   color: #fff;
@@ -141,7 +129,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #ffd57e; }
 
 main {
   padding: 4rem;
@@ -151,7 +139,7 @@ main {
     main .icons a {
       padding: 0.4 rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: #ffd57e;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
@@ -167,7 +155,7 @@ main {
     grid-area: bio-image;
     margin: auto;
     border-radius: 50%;
-    border: #eece1a 3px solid; }
+    border: #ffd57e 3px solid; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -178,9 +166,9 @@ main {
   .about-info .job-3 {
     grid-area: job-3; }
   .about-info .job {
-    background: #515151;
+    background: #48352c;
     padding: 0.5rem;
-    border-bottom: #eece1a 5px solid; }
+    border-bottom: #ffd57e 5px solid; }
 
 .projects {
   display: grid;
@@ -191,7 +179,7 @@ main {
     border: 3px #fff solid; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #eece1a;
+      border-color: #ffd57e;
       transition: all 0.5s ease-out; }
 
 .boxes {
@@ -208,7 +196,7 @@ main {
     transition: all 0.5s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
-      background: #eece1a;
+      background: #ffd57e;
       color: #000; }
       .boxes div:hover span {
         color: #000; }
@@ -219,7 +207,7 @@ main {
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #eece1a;
+    background: #ffd57e;
     color: #000; }
 
 .btn-dark {
@@ -227,13 +215,13 @@ main {
   color: #fff; }
 
 .btn-light {
-  background: #c4c4c4;
+  background: #c1a598;
   color: #333; }
 
 #main-footer {
   text-align: center;
   padding: 1rem;
-  background: #2b2b2b;
+  background: #18120f;
   color: #fff;
   height: 60px; }
 
@@ -253,24 +241,13 @@ main {
       line-height: 1;
       margin-bottom: 1rem; }
   ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
   .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    transform: translate3d(100%, 0, 0);
     font-size: 24px; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../img/portrait_small.jpg");
-      width: 150px;
-      height: 150px; }
   .about-info {
     grid-template-areas: "bio-image" "bio" "job-1" "job-2" "job-3";
     grid-template-columns: 1fr; }
