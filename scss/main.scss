@@ -114,7 +114,25 @@ main {
 }
 
 // Work/Projects
+.heading {
+    width: 80vw;
 
+    i {
+        padding: 10px;
+        font-size: 30px;
+        border: #fff 1px solid;
+
+        &.active {
+            color: $secondary-color;
+        }
+    }
+
+    div {
+        position: absolute;
+        right: 20vw;
+        display: block;
+    }
+}
 .size {
     border: 2px solid;
     padding: 20px;

@@ -170,6 +170,19 @@ main {
     padding: 0.5rem;
     border-bottom: #ffd57e 5px solid; }
 
+.heading {
+  width: 80vw; }
+  .heading i {
+    padding: 10px;
+    font-size: 30px;
+    border: #fff 1px solid; }
+    .heading i.active {
+      color: #ffd57e; }
+  .heading div {
+    position: absolute;
+    right: 20vw;
+    display: block; }
+
 .size {
   border: 2px solid;
   padding: 20px;
@@ -256,7 +269,7 @@ main {
   .about-info {
     grid-template-areas: "bio-image" "bio" "job-1" "job-2" "job-3";
     grid-template-columns: 1fr; }
-  .size {
+  .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
