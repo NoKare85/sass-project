@@ -115,7 +115,12 @@ main {
 
 // Work/Projects
 
-.projects {
+.size {
+    border: 2px solid;
+    padding: 20px;
+    width: 80vw;
+    resize: both;
+    overflow: auto;
     display: grid;
     grid-gap: 0.7rem;
     grid-template-columns: repeat(3, 1fr);
