@@ -5,6 +5,7 @@ const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
 const sizeBox = document.querySelector(".size");
+const sizeIcons = document.querySelectorAll(".size-icon");
 
 // Set Initial State of Menu
 let showMenu = false;
@@ -33,30 +34,68 @@ function toggleMenu() {
     }
 }
 
+// Setting the properties of different sizes
+sizes = [
+    {
+        name: "small",
+        max_size: 500,
+        min_size: 0,
+        icon: "fa-mobile",
+        grid: "1fr",
+    },
+    {
+        name: "medium",
+        max_size: 769,
+        min_size: 501,
+        icon: "fa-tablet",
+        grid: "repeat(2, 1fr)",
+    },
+    {
+        name: "large",
+        max_size: 1170,
+        min_size: 770,
+        icon: "fa-desktop",
+        grid: "repeat(3, 1fr)",
+    },
+    {
+        name: "xlarge",
+        max_size: 10000,
+        min_size: 1171,
+        icon: "fa-tv",
+        grid: "repeat(4, 1fr)",
+    },
+];
+
 // Resize project page box
 
-sizeBox.addEventListener("mouseup", setSize);
+sizeBox.addEventListener("mousedown", mouseMove);
+sizeBox.addEventListener("mouseup", mouseStop);
 
-function setSize() {
-    if (parseInt(sizeBox.style.width) > 1171) {
-        console.log("It's huge!");
-        sizeBox.style["grid-template-columns"] = "repeat(4, 1fr)";
-    } else if (
-        769 < parseInt(sizeBox.style.width) &&
-        parseInt(sizeBox.style.width) < 1171
-    ) {
-        console.log("It's large!");
-        sizeBox.style["grid-template-columns"] = "repeat(3, 1fr)";
-    } else if (
-        500 < parseInt(sizeBox.style.width) &&
-        parseInt(sizeBox.style.width) < 769
-    ) {
-        console.log("It's medium!");
-        sizeBox.style["grid-template-columns"] = "repeat(2, 1fr)";
-    } else {
-        console.log("It's small!");
-        sizeBox.style["grid-template-columns"] = "repeat(1fr)";
-    }
+function mouseMove() {
+    sizeBox.addEventListener("mousemove", reSize);
+}
 
-    console.log(sizeBox.style.width);
+function mouseStop() {
+    sizeBox.removeEventListener("mousemove", reSize);
+}
+
+function setSize(size) {
+    let temp = sizes.find((temp) => temp.name == size);
+    sizeBox.style.width = temp.size + "px";
+    sizeBox.style["grid-template-columns"] = temp.grid;
+    sizeIcons.forEach((item) => item.classList.remove("active"));
+    document.querySelector("." + temp.icon).classList.add("active");
+
+    boxSize = sizeBox.style.width;
+    document.getElementById("width").innerHTML = "Width: " + boxSize;
+    document.getElementById("width").style.right =
+        parseInt(window.innerWidth) - parseInt(boxSize) + "px";
+}
+
+function reSize() {
+    let val = parseInt(sizeBox.style.width);
+    let temp2 = sizes.find(
+        (temp2) => temp2.min_size <= val && val < temp2.max_size
+    );
+    setSize(temp2.name);
 }

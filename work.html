@@ -45,7 +45,23 @@
                 My <span class="text-secondary">Work</span>
             </h1>
             <h2 class="sm-heading">Check out some of my projects</h2>
-            <div class="size" onclick="setSize">
+
+            <div class="heading">
+                <div id="width"></div>
+                <a href="#!" id="xlarge" onclick="setSize(this.id)">
+                    <i class="size-icon fas fa-tv"></i>
+                </a>
+                <a href="#!" id="large" onclick="setSize(this.id)">
+                    <i class="size-icon fas fa-desktop"></i>
+                </a>
+                <a href="#!" id="medium" onclick="setSize(this.id)">
+                    <i class="size-icon fas fa-tablet"></i>
+                </a>
+                <a href="#!" id="small" onclick="setSize(this.id)">
+                    <i class="size-icon fas fa-mobile"></i>
+                </a>
+            </div>
+            <div class="size" style="width: 80vw">
                 <div class="item">
                     <a href="#!">
                         <img src="img/projects/project1.jpg" alt="Project" />
