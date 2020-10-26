@@ -170,14 +170,19 @@ main {
     padding: 0.5rem;
     border-bottom: #ffd57e 5px solid; }
 
-.projects {
+.size {
+  border: 2px solid;
+  padding: 20px;
+  width: 80vw;
+  resize: both;
+  overflow: auto;
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr); }
-  .projects img {
+  .size img {
     width: 100%;
     border: 3px #fff solid; }
-    .projects img:hover {
+    .size img:hover {
       opacity: 0.5;
       border-color: #ffd57e;
       transition: all 0.5s ease-out; }
@@ -251,7 +256,7 @@ main {
   .about-info {
     grid-template-areas: "bio-image" "bio" "job-1" "job-2" "job-3";
     grid-template-columns: 1fr; }
-  .projects {
+  .size {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
