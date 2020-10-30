@@ -114,42 +114,73 @@ main {
 }
 
 // Work/Projects
-.heading {
-    width: 80vw;
+.content {
+    .heading {
+        i {
+            padding: 10px;
+            font-size: 30px;
 
-    i {
-        padding: 10px;
-        font-size: 30px;
-        border: #fff 1px solid;
+            &.size-icon {
+                border: #fff 1px solid;
+            }
+            &.active {
+                color: $secondary-color;
+            }
+        }
+        .size-icons {
+            display: flex;
+            flex-wrap: wrap;
 
-        &.active {
-            color: $secondary-color;
+            .controls {
+                table {
+                    float: left;
+                }
+            }
+        }
+
+        .apply {
+            height: 50px;
+            top: 0;
         }
     }
-
-    div {
-        position: absolute;
-        right: 20vw;
-        display: block;
-    }
 }
-.size {
+
+#size-box {
     border: 2px solid;
     padding: 20px;
-    width: 80vw;
+    width: auto;
     resize: both;
     overflow: auto;
-    display: grid;
-    grid-gap: 0.7rem;
-    grid-template-columns: repeat(3, 1fr);
 
-    img {
-        width: 100%;
+    &.grid-box {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.flex-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: flex-end;
+    }
+
+    .item {
+        cursor: pointer;
+        flex-basis: 200px;
+        flex-grow: 3;
+        width: auto;
+        height: auto;
+        line-height: 30vh;
         border: 3px #fff solid;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 3rem;
+        position: relative;
 
         &:hover {
-            opacity: 0.5;
             border-color: $secondary-color;
+            color: $secondary-color;
             @include easeOut;
         }
     }

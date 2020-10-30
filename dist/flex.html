@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/9c14a3e477.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="css/main.css" />
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <header>
+            <div class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-branding">
+                    <div class="portrait"></div>
+                </div>
+                <ul class="menu-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="grid.html" class="nav-link"> Grid Project </a>
+                    </li>
+                    <li class="nav-item current">
+                        <a href="flex.html" class="nav-link">
+                            Flex Project
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="contact">
+            <h1 class="lg-heading">
+                Flex <span class="text-secondary">Project</span>
+            </h1>
+            <h2 class="sm-heading">This project demonstrates the use of flex-box</h2>
+            <p>
+                You can change the size of the flexbox by dragging from
+                the bottom right corner or by clicking on the size icons for
+                different display sizes on the top left corner.
+            </p>
+            <p>
+                Add a number of boxes you wish and see how the layout changes on different screen sizes.
+            </p>
+        <div class="content">
+                <div class="heading">
+                    <div class="size-icons">
+                        <a href="#!" id="xlarge" onclick="setSize(this.id)">
+                            <i class="size-icon fas fa-tv"></i>
+                        </a>
+                        <a href="#!" id="large" onclick="setSize(this.id)">
+                            <i class="size-icon fas fa-desktop"></i>
+                        </a>
+                        <a href="#!" id="medium" onclick="setSize(this.id)">
+                            <i class="size-icon fas fa-tablet"></i>
+                        </a>
+                        <a href="#!" id="small" onclick="setSize(this.id)">
+                            <i class="size-icon fas fa-mobile"></i>
+                        </a>
+                        <a href="#!" id="resetSize" onclick="resetSize()">
+                            <i class="size-icon fas fa-redo"></i>
+                        </a>
+                        <div class="controls">
+                            <form>
+                                <table>
+                                    <tr>
+                                        <td>Width:</td>
+                                        <td>
+                                            <input
+                                                id="wadjust"
+                                                value=""
+                                                size="2"
+                                            />px
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Height: </label></td>
+                                        <td>
+                                            <input
+                                                id="hadjust"
+                                                value=""
+                                                size="2"
+                                            />px
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td>Boxes:</td>
+                                        <td>
+                                            <input
+                                                id="boxes"
+                                                value="8"
+                                                size="1"
+                                            />
+                                        </td>
+                                        <td rowspan="2">
+                                            <input
+                                                size="3"
+                                                type="submit"
+                                                value="Apply"
+                                                class="apply"
+                                                onclick="drawBoxes()"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Overflow:</td>
+                                        <td>
+                                            <select id="overflow">
+                                                <option value="auto">
+                                                    auto
+                                                </option>
+                                                <option value="hidden">
+                                                    hidden
+                                                </option>
+                                                <option value="scroll">
+                                                    scroll
+                                                </option>
+                                                <option value="visible">
+                                                    visible
+                                                </option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            <div id="size-box" class="flex-box"></div>
+        </main>
+        <footer id="main-footer">Copyright &copy; 2020</footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>
