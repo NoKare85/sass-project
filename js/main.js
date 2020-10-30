@@ -101,6 +101,7 @@ function loadPage() {
 function drawBoxes() {
     let num = parseInt(document.getElementById("boxes").value);
     let overflow = document.getElementById("overflow").value;
+    console.log(overflow);
     sizeBox.style.overflow = overflow;
     let arr = new Array(num).fill("box");
     sizeBox.innerHTML = "";
@@ -115,9 +116,6 @@ function drawBoxes() {
 }
 
 function resizeBox() {
-    console.log(
-        window.getComputedStyle(this.parentElement).gridTemplateColumns
-    );
     let cols = window
         .getComputedStyle(this.parentElement)
         .gridTemplateColumns.split(" ").length;
@@ -189,20 +187,4 @@ function setSize(value) {
 function resetSize() {
     sizeModified = false;
     loadPage();
-}
-
-function changeGap(value1, value2) {
-    if (value1 == 0 && value2 == 0) {
-        sizeBox.style["grid-column-gap"] = "10px";
-        sizeBox.style["grid-row-gap"] = "10px";
-    } else {
-        sizeBox.style["grid-column-gap"] =
-            parseInt(window.getComputedStyle(sizeBox).gridColumnGap) +
-            value1 +
-            "px";
-        sizeBox.style["grid-row-gap"] =
-            parseInt(window.getComputedStyle(sizeBox).gridRowGap) +
-            value2 +
-            "px";
-    }
 }
