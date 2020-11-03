@@ -113,6 +113,7 @@ function drawBoxes() {
         box.addEventListener("click", resizeBox);
         sizeBox.appendChild(box);
     });
+    
 }
 
 function resizeBox() {
